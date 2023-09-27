@@ -1,21 +1,12 @@
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  fill('white');
+  fill(' Linen');
+  print(millis());
 }
 
-let xPos = 0;
-let xVelocity = 5;
-
 function draw() {
-  background('LightSkyBlue')
-  ellipse(xPos,50,50,50);
-  
-  xPos = xPos + xVelocity;
-
-  if (xPos > width) {
-    xVelocity = -5;
-  }
-  if (xPos < 0) {
-    xVelocity = 5;
-  }
+  background('LightSkyBlue') 
+  let secondsNow = second();
+  let myDiameter = (map (secondsNow, 0, 59, 100, height))
+  ellipse(width/2, height/2, myDiameter, myDiameter)
 }
